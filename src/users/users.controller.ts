@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Param, Query, Body } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Query,
+  Body,
+  Headers,
+  Ip,
+} from '@nestjs/common';
 
 @Controller('users')
 export class UsersController {
@@ -14,9 +23,17 @@ export class UsersController {
     return 'Creating a user coming soon!';
   }
 
-  @Get('/:id{/:city}')
-  public getUsersById(@Param() params: any) {
-    console.log(params);
+  @Get('/:id')
+  public getUsersById(
+    @Param('id') id: any,
+    @Query('limit') limit: any,
+    @Headers() headers: any,
+    @Ip() ip: any,
+  ) {
+    console.log(id);
+    console.log(limit);
+    console.log(headers);
+    console.log(ip);
     return 'Getting the user by id coming soon!';
   }
 }
