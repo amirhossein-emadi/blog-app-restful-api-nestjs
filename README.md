@@ -29,3 +29,4 @@ npm run start:prod
 # Dependencies
 
 - **[Class Validator](https://www.npmjs.com/package/class-validator)**
+- **[Class Transformer](https://www.npmjs.com/package/class-transformer)**
